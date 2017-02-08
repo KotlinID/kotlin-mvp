@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Kotlin MVP</string>
+    <string name="btn_replace">Replace</string>
 </resources>
