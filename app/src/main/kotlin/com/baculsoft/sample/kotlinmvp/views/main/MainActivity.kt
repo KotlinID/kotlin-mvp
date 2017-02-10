@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.view.View
-import android.widget.Button
 import com.baculsoft.sample.kotlinmvp.R
 import com.baculsoft.sample.kotlinmvp.model.Data
 import com.baculsoft.sample.kotlinmvp.views.next.NextFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView {
     lateinit var presenter: MainPresenter
@@ -57,15 +56,13 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     private fun initToolbar() {
-        val toolbar = findViewById(R.id.toolbar_main) as Toolbar
-        toolbar.title = title
-        setSupportActionBar(toolbar)
+        toolbar_main.title = title
+        setSupportActionBar(toolbar_main)
     }
 
     private fun addButtonListener() {
-        val button = findViewById(R.id.btn_main) as Button
-        button.setOnClickListener { view ->
-            button.visibility = View.GONE
+        btn_main.setOnClickListener { view ->
+            btn_main.visibility = View.GONE
             presenter.showFragment()
         }
     }

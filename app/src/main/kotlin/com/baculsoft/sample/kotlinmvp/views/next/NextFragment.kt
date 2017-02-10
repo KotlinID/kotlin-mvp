@@ -5,8 +5,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.baculsoft.sample.kotlinmvp.R
+import kotlinx.android.synthetic.main.fragment_next.*
 
 class NextFragment : Fragment(), NextView {
     lateinit var presenter: NextPresenter
@@ -36,8 +36,7 @@ class NextFragment : Fragment(), NextView {
     }
 
     override fun onShowResult(text: String) {
-        val textView = activity.findViewById(R.id.tv_next) as TextView
-        textView.text = text
+        tv_next.text = text
     }
 
     override fun onDestroyView() {
